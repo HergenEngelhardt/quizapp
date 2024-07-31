@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizapp</title>
+
+  <link rel="stylesheet" href="./style.css">
+
+  <!--Bootstrap files-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body onload="init()">
+  <header>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Quizapp</span>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container_card">
+
+    <div class="card">
+
+      <div class="card-body" id="endScreen" style="display: none;">
+
+        <div class="winnerText">Quiz beendet</div>
+
+        <div class="winnerText"> Du hast <b id="winnerCount">xx</b> Fragen von <b id="question_amount_winner">xx</b>
+          richtig beantwortet</div>
+      
+
+      <div class="buttonRow">
+        <button type="button" class="btn btn-secondary" id="new" onclick="restartQuiz()">Quiz
+          wiederholen</button>
+      </div>
+    </div>
+
+      <div class="card-body" id="questionBody">
+        <img src="./img/quiz.png" id="questionmark" alt="Picture with a questionmark">
+        <div class="progress">
+          <div class="progress-bar" id="progress" role="progressbar" style="width: 0%;">00%</div>
+        </div>
+        <h5 id="question_text" class="card-title">Frage</h5>
+
+        <div class="card quiz_answer mb-2" onclick="answer('answer1')">
+          <div class="card-body" id="answer1">
+            Antwort
+          </div>
+        </div>
+
+        <div class="card quiz_answer mb-2" onclick="answer('answer2')">
+          <div class="card-body" id="answer2">
+            Antwort
+          </div>
+        </div>
+
+        <div class="card quiz_answer mb-2" onclick="answer('answer3')">
+          <div class="card-body" id="answer3">
+            Antwort
+          </div>
+        </div>
+
+        <div class="card quiz_answer mb-2" onclick="answer('answer4')">
+          <div class="card-body" id="answer4">
+            Antwort
+          </div>
+        </div>
+
+        <div class="question_footer">
+          <span>
+            <b id="count_question">1</b> von <b id="question_amount">x</b> Fragen
+          </span>
+          <button type="button" class="btn btn-secondary" id="next" onclick="nextQuestion()" disabled>nächste
+            Frage</button>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer></footer>
+  <script src="./script.js"></script>
+</body>
+
+</html>
